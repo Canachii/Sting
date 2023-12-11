@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1727323108686865488}
   - component: {fileID: 8542032264628541500}
-  - component: {fileID: 1277251688318936272}
   m_Layer: 0
   m_Name: Player_1
   m_TagString: Untagged
@@ -56,22 +55,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 95f279ce3fe0c2d43a974378e1cd7e61, type: 2}
   - {fileID: 11400000, guid: 4ebec3e2bf95add4cbb1f1cad9f6995f, type: 2}
   bombProfile: {fileID: 11400000, guid: eb51d3e054cd439408917e4ac9c98307, type: 2}
-  firstFollower: {fileID: 0}
-  secondFollower: {fileID: 0}
   particle: {fileID: 2087639057538290060}
   invincibleDuration: 3
---- !u!114 &1277251688318936272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781851606113180448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79879dad3bda4e7281a31d8b6b6abf85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2003969068143679538
 GameObject:
   m_ObjectHideFlags: 0

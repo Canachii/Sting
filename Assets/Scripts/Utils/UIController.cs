@@ -123,9 +123,9 @@ public class UIController : MonoBehaviour
     {
         Sequence sequence = DOTween.Sequence();
 
-        sequence.Append(backCanvas.GetComponent<Image>().DOFade(.5f, value / 3))
+        sequence.Append(backCanvas.GetComponent<Image>().DOFade(.8f, value / 3))
             .AppendInterval(value / 3)
-            .Append(backCanvas.GetComponent<Image>().DOFade(0, value / 3));
+            .Append(backCanvas.GetComponent<Image>().DOFade(.3f, value / 3));
     }
 
     public void ResetMenu()
@@ -138,6 +138,7 @@ public class UIController : MonoBehaviour
         gameOverMenu.SetActive(false);
         gameClearMenu.SetActive(false);
         bossIndicator.SetActive(false);
+        backCanvas.GetComponent<Image>().color = Color.clear;
     }
 
     public void SetFullScreen(bool value)

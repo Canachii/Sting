@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a676b285f069c3c4884c27e78d0fc696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emitterProfile: {fileID: 11400000, guid: 1179fe214f72c874b991563d206466a3, type: 2}
+  emitterProfile: {fileID: 11400000, guid: 9dbcda2a334082d419ad674e82af4465, type: 2}
   patternOrigin: {fileID: 3724065499151942946}
   playAtStart: 0
   useDefaultGizmoColor: 1

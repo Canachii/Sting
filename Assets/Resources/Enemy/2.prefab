@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a676b285f069c3c4884c27e78d0fc696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emitterProfile: {fileID: 11400000, guid: 14a816ededaacf4479fc3149efd6b2fd, type: 2}
+  emitterProfile: {fileID: 11400000, guid: 7eaedca0639be5044ade428259a47793, type: 2}
   patternOrigin: {fileID: 3724065499151942946}
   playAtStart: 0
   useDefaultGizmoColor: 1
@@ -5108,7 +5108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 3724065499742716605}
-  maxHealth: 6
+  maxHealth: 4
   particle: {fileID: 9017413568823334124}
   itemPrefab: {fileID: 5631271494767881633, guid: 9b1d4c70fdf0b5d4cab2c38ec9f57cc9, type: 3}
   dropChance: 1
@@ -5126,8 +5126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 3724065499742716605}
   movementType: 1
-  delay: 3
+  delay: 1
   duration: 10
-  xSpeed: 1
+  xSpeed: 2
   ySpeed: 1
   amplitude: 1

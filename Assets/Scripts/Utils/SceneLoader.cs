@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Utils
 {
@@ -37,6 +38,7 @@ namespace Utils
             
             AudioManager.instance.PlayMusic($"Stage0{value}");
             GameManager.gameState = GameState.Play;
+            UIController.instance.backCanvas.GetComponent<Image>().color = new Color(0, 0, 0, .3f);
             UIController.instance.middleCanvas.SetActive(true);
             UIController.instance.menus.SetActive(false);
         }

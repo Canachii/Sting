@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a676b285f069c3c4884c27e78d0fc696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emitterProfile: {fileID: 11400000, guid: 5b7ac1d21e9552c45999f172c5114f21, type: 2}
+  emitterProfile: {fileID: 11400000, guid: 593c0e84d5fd8cf4a9accabb64381b0c, type: 2}
   patternOrigin: {fileID: 3724065499151942946}
   playAtStart: 0
   useDefaultGizmoColor: 1
@@ -5131,4 +5131,3 @@ MonoBehaviour:
   xSpeed: 1
   ySpeed: 3
   amplitude: 3
-  isLeaving: 0

@@ -5108,7 +5108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 3724065499742716605}
-  maxHealth: 6
+  maxHealth: 4
   particle: {fileID: 9017413568823334124}
   itemPrefab: {fileID: 5631271494767881633, guid: 8ea363846a3f91649a6c525cb8964d4b, type: 3}
   dropChance: 1

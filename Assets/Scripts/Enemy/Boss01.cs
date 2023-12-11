@@ -11,7 +11,9 @@ public class Boss01 : EnemyHealth
     private int ExtraLife { get; set; } // 남은 목숨 (보스에 적용)
 
     public EmitterProfile[] emitterProfiles;
-    private BulletEmitter bulletEmitter;
+    public EmitterProfile[] subEmitterProfiles;
+    public BulletEmitter bulletEmitter;
+    public BulletEmitter subBulletEmitter;
     private BulletReceiver bulletReceiver;
 
     private int phase;
@@ -37,7 +39,6 @@ public class Boss01 : EnemyHealth
     private void Start()
     {
         // 초기화
-        bulletEmitter = enemy.GetComponent<BulletEmitter>();
         bulletReceiver = enemy.GetComponent<BulletReceiver>();
         dialogueSystem = GetComponent<DialogueSystem>();
 
@@ -98,6 +99,7 @@ public class Boss01 : EnemyHealth
             Health = maxHealth;
 
             bulletEmitter.Kill();
+            subBulletEmitter.Kill();
             StopCoroutine(StartPhase(phase));
             phase++;
             t = 60;
@@ -108,7 +110,9 @@ public class Boss01 : EnemyHealth
         }
 
         // 대화문 활성화
+        AudioManager.instance.FadeMusicVolume(true);
         bulletEmitter.Kill();
+        subBulletEmitter.Kill();
         dialogueSystem.isVictory = true;
         dialogueSystem.EnableDialogue(true);
         dialogueSystem.DisplayDialogue();
@@ -125,10 +129,6 @@ public class Boss01 : EnemyHealth
         sequence.Kill();
         UIController.instance.bossIndicator.SetActive(false);
         Destroy(enemy);
-
-        // 점수 추가
-        GameManager.Score += (int)(100000000 / GameManager.delta);
-        UIController.instance.UpdateScore();
     }
 
     private void BossStart(int value)
@@ -140,6 +140,8 @@ public class Boss01 : EnemyHealth
     {
         bulletEmitter.emitterProfile = emitterProfiles[value];
         bulletEmitter.Play();
+        subBulletEmitter.emitterProfile = subEmitterProfiles[value];
+        subBulletEmitter.Play();
         sequence.Kill();
 
         sequence = DOTween.Sequence();

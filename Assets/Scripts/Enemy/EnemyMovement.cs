@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using BulletPro;
 using UnityEngine;
@@ -8,7 +9,8 @@ using DG.Tweening;
 public enum MovementType
 {
     Normal,
-    Wave
+    Wave,
+    Blink
 }
 
 public class EnemyMovement : MonoBehaviour
@@ -48,29 +50,39 @@ public class EnemyMovement : MonoBehaviour
             Destroy(gameObject, delay + duration);
         }
 
-        // 일반 움직임
-        if (movementType != MovementType.Normal) return;
-
-        // 벽 y좌표
-        const float wallPos = 3;
-
-        mySequence = DOTween.Sequence();
-        mySequence.Append(enemy.transform.DOMove(targetPosition, delay))
-            .AppendInterval(duration)
-            .Append(enemy.transform.DOPath(
-                new[]
-                {
-                    targetPosition, targetPosition + Vector3.left,
-                    targetPosition + (targetPosition.y > 0 ? Vector3.up : Vector3.down) * wallPos
-                }, 10, PathType.CatmullRom))
-            .OnComplete(() => Destroy(gameObject));
+        switch (movementType)
+        {
+            case MovementType.Normal:
+                // 벽 y좌표
+                const float wallPos = 3;
+                mySequence = DOTween.Sequence();
+                mySequence.Append(enemy.transform.DOMove(targetPosition, delay))
+                    .AppendInterval(duration)
+                    .Append(enemy.transform.DOPath(
+                        new[]
+                        {
+                            targetPosition, targetPosition + Vector3.left,
+                            targetPosition + (targetPosition.y > 0 ? Vector3.up : Vector3.down) * wallPos
+                        }, 10, PathType.CatmullRom))
+                    .OnComplete(() => Destroy(gameObject));
+                break;
+            case MovementType.Blink:
+                enemy.transform.position = targetPosition;
+                enemy.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+                mySequence = DOTween.Sequence();
+                mySequence.Append(enemy.GetComponent<SpriteRenderer>().DOFade(1, delay))
+                    .AppendInterval(duration)
+                    .Append(enemy.GetComponent<SpriteRenderer>().DOFade(0, delay))
+                    .OnComplete(() => Destroy(gameObject));
+                break;
+        }
     }
 
     private void Update()
     {
         if (movementType != MovementType.Wave) return;
         if (!enemy) return;
-        
+
         // 목표 좌표 재설정
         targetPosition = enemy.transform.position;
 

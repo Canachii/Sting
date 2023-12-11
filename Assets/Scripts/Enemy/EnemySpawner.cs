@@ -54,10 +54,11 @@ public class EnemySpawner : MonoBehaviour
         foreach (var enemy in enemies)
         {
             // 적 난이도가 게임 난이도보다 높으면 생성되지 않음
-            if (enemy.difficulty.GetHashCode() > GameManager.Difficulty) yield break;
+            if (enemy.difficulty.GetHashCode() > GameManager.Difficulty) continue;
 
             // 시간이 지나면 생성
             yield return new WaitForSeconds(enemy.spawnTime);
+            if (GameManager.Life <= 0) yield break;
             Debug.Log($"{enemy.enemyPrefab} Spawned : {delta}");
             Instantiate(enemy.enemyPrefab,
                 new Vector3(GameManager.instance.rightWall.position.x - 1.5f, enemy.yPosition), Quaternion.identity);
