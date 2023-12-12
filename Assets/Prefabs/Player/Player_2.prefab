@@ -54,7 +54,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 703d8e97acb335d4abef28a61a3199fe, type: 2}
   - {fileID: 11400000, guid: d15a06f78d59728478a6a4d4cea01f2f, type: 2}
   - {fileID: 11400000, guid: 4cfb26a694db4ca46b245407993bc6e7, type: 2}
-  bombProfile: {fileID: 0}
+  bombProfile: {fileID: 11400000, guid: dfd7a6ed6d8b02d48b4697452653d4d5, type: 2}
   particle: {fileID: 2087639057538290060}
   invincibleDuration: 3
 --- !u!1 &2003969068143679538

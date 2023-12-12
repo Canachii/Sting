@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: New ShotParams 1
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 6621294
+  uniqueIndex: 12808472
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []
@@ -2481,7 +2481,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 4654261
+  uniqueIndex: 9146720
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children:
@@ -10455,7 +10455,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 10757822
+  uniqueIndex: 13484185
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -12873,7 +12873,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 14265886
+  uniqueIndex: 16045966
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -19985,7 +19985,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 4993527
+  uniqueIndex: 4117533
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:
@@ -44220,7 +44220,7 @@ MonoBehaviour:
   m_Name: Pattern 0
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 2013557
+  uniqueIndex: 6741089
   profile: {fileID: 11400000}
   parent: {fileID: 114027673760526898}
   children:
@@ -68455,7 +68455,7 @@ MonoBehaviour:
   m_Name: Bullet 0
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 14854262
+  uniqueIndex: 9145432
   profile: {fileID: 11400000}
   parent: {fileID: 7758733584343666793}
   children: []
@@ -70774,7 +70774,7 @@ MonoBehaviour:
   foldoutVFX: 1
   hideSpriteList: 0
   vfxOpened: 0
-  currentlyDisplayedModule: 0
+  currentlyDisplayedModule: 2
   canMove: 1
   canCollide: 1
   isVisible: 1
@@ -76428,7 +76428,7 @@ MonoBehaviour:
   m_Name: Shot 0
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 3735488
+  uniqueIndex: 11343324
   profile: {fileID: 11400000}
   parent: {fileID: 2919241325563982999}
   children:
