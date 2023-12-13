@@ -5365,7 +5365,7 @@ MonoBehaviour:
   dropChance: 1
   maxExtraLife: 1
   emitterProfiles:
-  - {fileID: 11400000, guid: 4162b254a6ad9f64fb46815fc35c6fbf, type: 2}
+  - {fileID: 11400000, guid: cf7bd4e7b4241674eadcbf06c69349bc, type: 2}
   - {fileID: 11400000, guid: 6df5cf9a05912b84780eeb9e28fa5643, type: 2}
   subEmitterProfiles:
   - {fileID: 11400000, guid: eb9c898f17065334088c2b83779dbf13, type: 2}

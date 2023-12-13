@@ -17,7 +17,6 @@ public class Boss01 : EnemyHealth
     private BulletReceiver bulletReceiver;
 
     private int phase;
-    private Sequence sequence;
     private float t;
     private Vector3 targetPosition;
     private DialogueSystem dialogueSystem;
@@ -126,7 +125,7 @@ public class Boss01 : EnemyHealth
         AudioManager.instance.PlaySFX("Boss Destroy");
         particle.transform.position = enemy.transform.position;
         particle.Play();
-        sequence.Kill();
+        enemy.transform.DOKill();
         UIController.instance.bossIndicator.SetActive(false);
         Destroy(enemy);
     }
@@ -142,21 +141,25 @@ public class Boss01 : EnemyHealth
         bulletEmitter.Play();
         subBulletEmitter.emitterProfile = subEmitterProfiles[value];
         subBulletEmitter.Play();
-        sequence.Kill();
 
-        sequence = DOTween.Sequence();
+        enemy.transform.DOKill();
 
         switch (value)
         {
             case 1:
-                sequence.Append(enemy.transform.DOMoveY(0, 2f).SetEase(Ease.InOutSine));
+                enemy.transform.DOMoveY(0, 1f).SetEase(Ease.OutSine);
+                yield return new WaitForSeconds(2f);
+                enemy.transform.DOMoveY(-1f, 2f).SetEase(Ease.InOutSine);
+                yield return new WaitForSeconds(2f);
+                enemy.transform.DOMoveY(1f, 2f).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
                 break;
             default:
-                sequence.Append(enemy.transform.DOMoveY(2, 2f).SetEase(Ease.Linear))
-                    .Append(enemy.transform.DOMoveY(-2, 2f).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo));
+                enemy.transform.DOMoveY(Random.Range(-2f, 2f), 2f).SetEase(Ease.OutSine);
+                yield return new WaitForSeconds(3f);
+                enemy.transform.DOMoveY(Random.Range(-2f, 2f), 2f).SetEase(Ease.OutSine);
+                yield return new WaitForSeconds(3f);
+                enemy.transform.DOMoveY(Random.Range(-2f, 2f), 2f).SetEase(Ease.OutSine).SetLoops(-1, LoopType.Yoyo);
                 break;
         }
-
-        yield return null;
     }
 }
